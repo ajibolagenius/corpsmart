@@ -2,7 +2,8 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -10,8 +11,10 @@ import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { ShoppingBag, Users, Shield, MessageCircle } from "lucide-react"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { ShoppingBag, Users, Shield, MessageCircle, Info } from "lucide-react"
 import { InstallPrompt } from "@/components/install-prompt"
+import { authenticateUser, setCurrentUser, getCurrentUser } from "@/lib/mock-users"
 
 // Nigerian states for NYSC deployment
 const nigerianStates = [
@@ -57,7 +60,10 @@ const nigerianStates = [
 const nyscBatches = ["2024 Batch A", "2024 Batch B", "2024 Batch C", "2023 Batch A", "2023 Batch B", "2023 Batch C"]
 
 export default function HomePage() {
+  const router = useRouter()
   const [isSignUp, setIsSignUp] = useState(false)
+  const [error, setError] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -68,14 +74,52 @@ export default function HomePage() {
     callUpNumber: "",
   })
 
+  useEffect(() => {
+    const currentUser = getCurrentUser()
+    if (currentUser) {
+      router.push("/listings")
+    }
+  }, [router])
+
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
+    setError("") // Clear error when user types
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Implement authentication logic
-    console.log("Form submitted:", formData)
+    setIsLoading(true)
+    setError("")
+
+    try {
+      if (isSignUp) {
+        // Sign up validation
+        if (formData.password !== formData.confirmPassword) {
+          setError("Passwords do not match")
+          return
+        }
+        if (!formData.state || !formData.batch) {
+          setError("Please select your state and batch")
+          return
+        }
+        // For demo, just redirect to listings
+        setError("Sign up successful! Please sign in with your credentials.")
+        setIsSignUp(false)
+      } else {
+        // Sign in
+        const user = authenticateUser(formData.email, formData.password)
+        if (user) {
+          setCurrentUser(user)
+          router.push("/listings")
+        } else {
+          setError("Invalid email or password")
+        }
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again.")
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -118,8 +162,21 @@ export default function HomePage() {
         </div>
       </div>
 
+      <div className="px-4 mx-auto max-w-md sm:px-6 mb-4">
+        <Alert>
+          <Info className="h-4 w-4" />
+          <AlertDescription>
+            <strong>Test Credentials:</strong>
+            <br />
+            User: test@user.com / password123
+            <br />
+            Admin: admin@corpsmart.com / admin123
+          </AlertDescription>
+        </Alert>
+      </div>
+
       {/* Authentication Section */}
-      <div className="px-4 py-16 mx-auto max-w-md sm:px-6">
+      <div className="px-4 py-8 mx-auto max-w-md sm:px-6">
         <Card className="shadow-xl border-0 bg-card/80 backdrop-blur-sm">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-serif">{isSignUp ? "Join CorpsMart" : "Welcome Back"}</CardTitle>
@@ -128,6 +185,12 @@ export default function HomePage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
+            {error && (
+              <Alert variant="destructive" className="mb-4">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
+
             <Tabs value={isSignUp ? "signup" : "signin"} className="w-full">
               <TabsList className="grid w-full grid-cols-2">
                 <TabsTrigger value="signin" onClick={() => setIsSignUp(false)}>
@@ -162,8 +225,8 @@ export default function HomePage() {
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full">
-                    Sign In
+                  <Button type="submit" className="w-full" disabled={isLoading}>
+                    {isLoading ? "Signing In..." : "Sign In"}
                   </Button>
                 </form>
               </TabsContent>
@@ -259,8 +322,8 @@ export default function HomePage() {
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full">
-                    Create Account
+                  <Button type="submit" className="w-full" disabled={isLoading}>
+                    {isLoading ? "Creating Account..." : "Create Account"}
                   </Button>
                 </form>
               </TabsContent>
