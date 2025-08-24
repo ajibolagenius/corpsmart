@@ -88,3 +88,9 @@ export const setCurrentUser = (user: MockUser | null): void => {
 export const isAdmin = (user: MockUser | null): boolean => {
   return user?.role === "admin"
 }
+
+export const logout = (): void => {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("currentUser")
+  }
+}

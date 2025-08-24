@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Source_Sans_3, Playfair_Display } from "next/font/google"
 import "./globals.css"
+import { Navigation } from "@/components/navigation"
 
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
@@ -44,7 +45,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${sourceSans.variable} ${playfair.variable} antialiased`}>
       <body className="min-h-screen bg-background font-sans antialiased">
-        {children}
+        <Navigation />
+        <main className="pb-16 md:pb-0">{children}</main>
         <script
           dangerouslySetInnerHTML={{
             __html: `
