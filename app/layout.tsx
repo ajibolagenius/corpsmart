@@ -1,19 +1,27 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Source_Sans_3, Playfair_Display } from "next/font/google"
+import { Space_Grotesk, Gloock, Space_Mono } from "next/font/google"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 
-const sourceSans = Source_Sans_3({
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-source-sans",
+  variable: "--font-space-grotesk",
 })
 
-const playfair = Playfair_Display({
+const gloock = Gloock({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-playfair",
+  variable: "--font-gloock",
+  weight: "400",
+})
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-space-mono",
+  weight: ["400", "700"],
 })
 
 export const metadata: Metadata = {
@@ -21,7 +29,7 @@ export const metadata: Metadata = {
   description: "Buy, sell, and trade goods safely with fellow NYSC corps members",
   generator: "v0.app",
   manifest: "/manifest.json",
-  themeColor: "#0891b2",
+  themeColor: "#327039",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   appleWebApp: {
     capable: true,
@@ -43,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${sourceSans.variable} ${playfair.variable} antialiased`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${gloock.variable} ${spaceMono.variable} antialiased`}>
       <body className="min-h-screen bg-background font-sans antialiased">
         <Navigation />
         <main className="pb-16 md:pb-0">{children}</main>

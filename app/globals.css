@@ -4,83 +4,137 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens to match enhanced CorpsMart design brief */
-  --background: oklch(1 0 0); /* #ffffff */
-  --foreground: oklch(0.556 0.016 257.267); /* #475569 */
-  --card: oklch(0.973 0.013 199.976); /* #ecfeff */
-  --card-foreground: oklch(0.318 0.054 199.976); /* #164e63 */
-  --popover: oklch(1 0 0); /* #ffffff */
-  --popover-foreground: oklch(0.556 0.016 257.267); /* #475569 */
-  --primary: oklch(0.318 0.054 199.976); /* #164e63 - cyan-800 */
-  --primary-foreground: oklch(1 0 0); /* #ffffff */
-  --secondary: oklch(0.631 0.133 199.976); /* #0891b2 - cyan-600 */
-  --secondary-foreground: oklch(1 0 0); /* #ffffff */
-  --muted: oklch(0.973 0.013 199.976); /* #ecfeff */
-  --muted-foreground: oklch(0.556 0.016 257.267); /* #475569 */
-  --accent: oklch(0.631 0.133 70.08); /* #d97706 - amber-600 */
-  --accent-foreground: oklch(1 0 0); /* #ffffff */
-  --destructive: oklch(0.577 0.245 27.325); /* #dc2626 */
-  --destructive-foreground: oklch(1 0 0); /* #ffffff */
-  --border: oklch(0.556 0.016 257.267); /* #475569 */
-  --input: oklch(0.973 0.013 199.976); /* #ecfeff */
-  --ring: oklch(0.318 0.054 199.976 / 0.5); /* primary with opacity */
-  --chart-1: oklch(0.631 0.133 70.08); /* #d97706 */
-  --chart-2: oklch(0.318 0.054 199.976); /* #164e63 */
-  --chart-3: oklch(0.973 0.013 199.976); /* #ecfeff */
-  --chart-4: oklch(0.631 0.188 27.325); /* #ea580c */
-  --chart-5: oklch(1 0 0); /* #ffffff */
-  --radius: 0.5rem; /* 8px for modern rounded corners */
-  --sidebar: oklch(1 0 0); /* #ffffff */
-  --sidebar-foreground: oklch(0.556 0.016 257.267); /* #475569 */
-  --sidebar-primary: oklch(0.318 0.054 199.976); /* #164e63 */
-  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff */
-  --sidebar-accent: oklch(0.631 0.133 70.08); /* #d97706 */
-  --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff */
-  --sidebar-border: oklch(0.556 0.016 257.267); /* #475569 */
-  --sidebar-ring: oklch(0.318 0.054 199.976 / 0.5); /* primary with opacity */
+  /* Refined color palette with proper role assignments */
+  /* Tilled Earth - Primary brand color (dark green/black) */
+  --tilled-earth: #133020;
+  /* Forest Fern - Primary CTA color (medium green) */
+  --forest-fern: #327039;
+  /* Wheat Field Sunrise - Secondary CTA color (golden yellow) */
+  --wheat-sunrise: #f0be49;
+  /* Alabaster Hay - Light accent color (cream) */
+  --alabaster-hay: #f8edd9;
+  /* Cherry Grove - Accent color (coral/orange-red) */
+  --cherry-grove: #dd5c36;
+
+  /* Generated neutral color sets */
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+  --neutral-950: #0a0a0a;
+
+  /* State color sets */
+  --success-50: #f0fdf4;
+  --success-100: #dcfce7;
+  --success-500: var(--forest-fern);
+  --success-600: #16a34a;
+  --success-700: #15803d;
+
+  --warning-50: #fffbeb;
+  --warning-100: #fef3c7;
+  --warning-500: var(--wheat-sunrise);
+  --warning-600: #d97706;
+  --warning-700: #b45309;
+
+  --error-50: #fef2f2;
+  --error-100: #fee2e2;
+  --error-500: var(--cherry-grove);
+  --error-600: #dc2626;
+  --error-700: #b91c1c;
+
+  --info-50: #eff6ff;
+  --info-100: #dbeafe;
+  --info-500: #3b82f6;
+  --info-600: #2563eb;
+  --info-700: #1d4ed8;
+
+  /* Design system tokens with refined roles */
+  --background: #ffffff;
+  --foreground: var(--tilled-earth);
+  --card: var(--neutral-50);
+  --card-foreground: var(--tilled-earth);
+  --popover: #ffffff;
+  --popover-foreground: var(--tilled-earth);
+
+  /* Updated primary to use Tilled Earth as main brand color */
+  --primary: var(--tilled-earth);
+  --primary-foreground: #ffffff;
+
+  /* Updated secondary to use Forest Fern for primary CTAs */
+  --secondary: var(--forest-fern);
+  --secondary-foreground: #ffffff;
+
+  --muted: var(--neutral-100);
+  --muted-foreground: var(--neutral-600);
+  --accent: var(--cherry-grove);
+  --accent-foreground: #ffffff;
+  --destructive: var(--error-500);
+  --destructive-foreground: #ffffff;
+
+  /* Updated border to use dark solid borders */
+  --border: var(--neutral-800);
+  --input: var(--neutral-50);
+  --ring: var(--tilled-earth);
+
+  --chart-1: var(--tilled-earth);
+  --chart-2: var(--forest-fern);
+  --chart-3: var(--wheat-sunrise);
+  --chart-4: var(--cherry-grove);
+  --chart-5: var(--alabaster-hay);
+  --radius: 0.5rem;
+
+  --sidebar: #ffffff;
+  --sidebar-foreground: var(--tilled-earth);
+  --sidebar-primary: var(--tilled-earth);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--forest-fern);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: var(--neutral-800);
+  --sidebar-ring: var(--tilled-earth);
 }
 
 .dark {
-  /* Updated dark mode tokens for better contrast */
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.631 0.133 199.976); /* Keep primary lighter in dark mode */
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.631 0.133 199.976);
-  --secondary-foreground: oklch(0.145 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.631 0.133 70.08);
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.631 0.133 199.976 / 0.5);
-  --chart-1: oklch(0.631 0.133 70.08);
-  --chart-2: oklch(0.631 0.133 199.976);
-  --chart-3: oklch(0.269 0 0);
-  --chart-4: oklch(0.631 0.188 27.325);
-  --chart-5: oklch(0.985 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.631 0.133 199.976);
-  --sidebar-primary-foreground: oklch(0.145 0 0);
-  --sidebar-accent: oklch(0.631 0.133 70.08);
-  --sidebar-accent-foreground: oklch(0.145 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.631 0.133 199.976 / 0.5);
+  /* Updated dark mode with refined color roles */
+  --background: var(--tilled-earth);
+  --foreground: var(--alabaster-hay);
+  --card: #1a2e1a;
+  --card-foreground: var(--alabaster-hay);
+  --popover: #1a2e1a;
+  --popover-foreground: var(--alabaster-hay);
+  --primary: var(--forest-fern);
+  --primary-foreground: #ffffff;
+  --secondary: var(--wheat-sunrise);
+  --secondary-foreground: var(--tilled-earth);
+  --muted: #1a2e1a;
+  --muted-foreground: var(--neutral-400);
+  --accent: var(--cherry-grove);
+  --accent-foreground: #ffffff;
+  --destructive: var(--error-500);
+  --destructive-foreground: #ffffff;
+  --border: var(--neutral-700);
+  --input: #1a2e1a;
+  --ring: var(--forest-fern);
+  --sidebar: var(--tilled-earth);
+  --sidebar-foreground: var(--alabaster-hay);
+  --sidebar-primary: var(--forest-fern);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--wheat-sunrise);
+  --sidebar-accent-foreground: var(--tilled-earth);
+  --sidebar-border: var(--neutral-700);
+  --sidebar-ring: var(--forest-fern);
 }
 
 @theme inline {
-  /* Updated font configuration for CorpsMart typography */
-  --font-sans: var(--font-source-sans);
-  --font-serif: var(--font-playfair);
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* Updated font configuration for new typography system */
+  --font-sans: var(--font-space-grotesk);
+  --font-serif: var(--font-gloock);
+  --font-mono: var(--font-space-mono);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -106,9 +160,9 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
   --radius-xl: calc(var(--radius) + 4px);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -118,6 +172,32 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added comprehensive brand color utilities */
+  --color-tilled-earth: var(--tilled-earth);
+  --color-forest-fern: var(--forest-fern);
+  --color-wheat-sunrise: var(--wheat-sunrise);
+  --color-alabaster-hay: var(--alabaster-hay);
+  --color-cherry-grove: var(--cherry-grove);
+
+  /* Added neutral color utilities */
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-950: var(--neutral-950);
+
+  /* Added state color utilities */
+  --color-success: var(--success-500);
+  --color-warning: var(--warning-500);
+  --color-error: var(--error-500);
+  --color-info: var(--info-500);
 }
 
 @layer base {
@@ -128,30 +208,161 @@
     @apply bg-background text-foreground font-sans;
   }
 
-  /* Added typography hierarchy for CorpsMart */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
+  /* Enhanced typography hierarchy with refined font system */
+  h1 {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-tilled-earth;
+  }
+
+  h2 {
+    @apply font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-tilled-earth;
+  }
+
+  h3 {
+    @apply font-serif text-2xl md:text-3xl lg:text-4xl font-bold leading-snug text-tilled-earth;
+  }
+
+  h4 {
+    @apply font-serif text-xl md:text-2xl lg:text-3xl font-semibold leading-snug text-tilled-earth;
+  }
+
+  h5 {
+    @apply font-serif text-lg md:text-xl lg:text-2xl font-semibold leading-normal text-tilled-earth;
+  }
+
   h6 {
-    @apply font-serif font-bold;
+    @apply font-serif text-base md:text-lg lg:text-xl font-semibold leading-normal text-tilled-earth;
+  }
+
+  /* Updated typography utility classes with consistent color usage */
+  .text-display {
+    @apply font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-none tracking-tight text-tilled-earth;
   }
 
   .text-heading {
-    @apply font-serif font-bold;
+    @apply font-serif font-bold text-tilled-earth;
   }
 
   .text-body {
-    @apply font-sans;
+    @apply font-sans leading-relaxed text-neutral-700;
   }
 
-  /* Added smooth scrolling and animation classes */
+  .text-body-large {
+    @apply font-sans text-lg leading-relaxed text-neutral-700;
+  }
+
+  .text-body-small {
+    @apply font-sans text-sm leading-normal text-neutral-600;
+  }
+
+  .text-caption {
+    @apply font-mono text-xs uppercase tracking-wider text-neutral-500;
+  }
+
+  .text-code {
+    @apply font-mono text-sm text-neutral-800;
+  }
+
+  /* Updated brand color utilities with refined roles */
+  .text-tilled-earth {
+    color: var(--tilled-earth);
+  }
+
+  .text-forest-fern {
+    color: var(--forest-fern);
+  }
+
+  .text-wheat-sunrise {
+    color: var(--wheat-sunrise);
+  }
+
+  .text-alabaster-hay {
+    color: var(--alabaster-hay);
+  }
+
+  .text-cherry-grove {
+    color: var(--cherry-grove);
+  }
+
+  .bg-tilled-earth {
+    background-color: var(--tilled-earth);
+  }
+
+  .bg-forest-fern {
+    background-color: var(--forest-fern);
+  }
+
+  .bg-wheat-sunrise {
+    background-color: var(--wheat-sunrise);
+  }
+
+  .bg-alabaster-hay {
+    background-color: var(--alabaster-hay);
+  }
+
+  .bg-cherry-grove {
+    background-color: var(--cherry-grove);
+  }
+
+  /* Added solid border utilities with dark borders */
+  .border-solid-dark {
+    @apply border border-neutral-800;
+  }
+
+  .border-solid-light {
+    @apply border border-neutral-300;
+  }
+
+  .border-brand {
+    @apply border border-tilled-earth;
+  }
+
+  .border-primary-cta {
+    @apply border border-forest-fern;
+  }
+
+  .border-secondary-cta {
+    @apply border border-wheat-sunrise;
+  }
+
+  .border-accent {
+    @apply border border-cherry-grove;
+  }
+
+  /* Enhanced button styles with solid colors and borders */
+  .btn-primary {
+    @apply bg-tilled-earth text-white border-2 border-tilled-earth hover:bg-neutral-800 hover:border-neutral-800 transition-all duration-200;
+  }
+
+  .btn-primary-cta {
+    @apply bg-forest-fern text-white border-2 border-forest-fern hover:bg-green-700 hover:border-green-700 transition-all duration-200;
+  }
+
+  .btn-secondary-cta {
+    @apply bg-wheat-sunrise text-tilled-earth border-2 border-wheat-sunrise hover:bg-yellow-500 hover:border-yellow-500 transition-all duration-200;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-tilled-earth border-2 border-tilled-earth hover:bg-tilled-earth hover:text-white transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent text-tilled-earth border-2 border-transparent hover:border-tilled-earth transition-all duration-200;
+  }
+
+  /* Card styles with solid borders */
+  .card-solid {
+    @apply bg-white border-2 border-neutral-800 rounded-lg shadow-sm;
+  }
+
+  .card-elevated {
+    @apply bg-white border-2 border-neutral-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200;
+  }
+
+  /* Enhanced animation system */
   html {
     scroll-behavior: smooth;
   }
 
-  /* Animation classes for scroll-triggered animations */
   .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
@@ -225,18 +436,36 @@
     transition-delay: 0.6s;
   }
 
-  /* Smooth hover animations */
+  /* Enhanced hover effects */
   .hover-lift {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .hover-lift:hover {
     transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(50, 112, 57, 0.3);
   }
 
   /* Parallax effect */
   .parallax {
     transform: translateZ(0);
     will-change: transform;
+  }
+
+  /* Design system spacing utilities */
+  .space-section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .space-component {
+    @apply py-8 md:py-12;
+  }
+
+  .space-element {
+    @apply py-4 md:py-6;
   }
 }
