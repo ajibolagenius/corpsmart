@@ -70,5 +70,5 @@
     - Ensure all Image components have appropriate fallback handling
     - _Requirements: 2.4, 4.3_
 
-    - [-] 7. Update the existing project documents
+    - [x] 7. Update the existing project documents
       - 7.1 Update README.md with new branding assets information
