@@ -5,68 +5,69 @@ import "./globals.css"
 import { Navigation } from "@/components/navigation"
 
 const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-space-grotesk",
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-space-grotesk",
 })
 
 const gloock = Gloock({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-gloock",
-  weight: "400",
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-gloock",
+    weight: "400",
 })
 
 const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-space-mono",
-  weight: ["400", "700"],
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-space-mono",
+    weight: ["400", "700"],
 })
 
 export const metadata: Metadata = {
-  title: "CorpsMart - NYSC Marketplace",
-  description: "Buy, sell, and trade goods safely with fellow NYSC corps members",
-  generator: "v0.app",
-  manifest: "/manifest.json",
-  themeColor: "#327039",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "CorpsMart",
-  },
-  icons: {
-    icon: [
-      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-  },
+    title: "CorpsMart - NYSC Marketplace",
+    description: "Buy, sell, and trade goods safely with fellow NYSC corps members",
+    manifest: "/manifest.json",
+    themeColor: "#327039",
+    viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+    appleWebApp: {
+        capable: true,
+        statusBarStyle: "default",
+        title: "CorpsMart",
+    },
+    icons: {
+        icon: [
+            { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+            { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+            { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+            { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+        ],
+        apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    },
 }
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${gloock.variable} ${spaceMono.variable} antialiased`}>
-      <body className="min-h-screen bg-background font-sans antialiased">
-        <Navigation />
-        <main className="pb-16 md:pb-0">{children}</main>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+    return (
+        <html lang="en" className={`${spaceGrotesk.variable} ${gloock.variable} ${spaceMono.variable} antialiased`}>
+            <body className="min-h-screen bg-background font-sans antialiased">
+                <Navigation />
+                <main className="pb-16 md:pb-0">{children}</main>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
               if ('serviceWorker' in navigator) {
                 window.addEventListener('load', function() {
                   navigator.serviceWorker.register('/sw.js');
                 });
               }
             `,
-          }}
-        />
-      </body>
-    </html>
-  )
+                    }}
+                />
+            </body>
+        </html>
+    )
 }

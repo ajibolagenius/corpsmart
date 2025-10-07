@@ -97,6 +97,12 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: var(--neutral-800);
   --sidebar-ring: var(--tilled-earth);
+
+  /* Phosphor Icons (Duotone) */
+  --icon-primary: var(--primary);
+  --icon-secondary: var(--secondary);
+  --icon-accent: var(--accent);
+  --icon-destructive: var(--error-500);
 }
 
 .dark {
@@ -128,6 +134,12 @@
   --sidebar-accent-foreground: var(--tilled-earth);
   --sidebar-border: var(--neutral-700);
   --sidebar-ring: var(--forest-fern);
+
+  /* Phosphor Icons (Duotone) in dark mode */
+  --icon-primary: var(--primary);
+  --icon-secondary: var(--secondary);
+  --icon-accent: var(--accent);
+  --icon-destructive: var(--error-500);
 }
 
 @theme inline {
@@ -160,9 +172,9 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 2px);
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
@@ -203,6 +215,7 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    border-radius: 1px; /* Updated to use a solid border with a 1px radius */
   }
   body {
     @apply bg-background text-foreground font-sans;
@@ -443,7 +456,7 @@
 
   .hover-lift:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 25px -5px rgba(0,   0, 0.04);
   }
 
   .hover-glow:hover {

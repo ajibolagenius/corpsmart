@@ -31,18 +31,11 @@
   },
   "screenshots": [
     {
-      "src": "/screenshot-wide.png",
-      "sizes": "1280x720",
+      "src": "/corpsmart.png",
+      "sizes": "2880x2340",
       "type": "image/png",
       "form_factor": "wide",
       "label": "CorpsMart marketplace view"
-    },
-    {
-      "src": "/screenshot-narrow.png",
-      "sizes": "750x1334",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "CorpsMart mobile view"
     }
   ],
   "shortcuts": [
