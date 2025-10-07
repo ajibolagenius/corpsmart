@@ -12,7 +12,7 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { SafeAvatar } from "@/components/ui/safe-avatar"
 import { Home, Search, MessageCircle, Plus, LogOut, Shield, Receipt } from "lucide-react"
 import { getCurrentUser, logout } from "@/lib/mock-users"
 import { Logo } from "@/components/logo"
@@ -73,15 +73,12 @@ export function Navigation() {
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant="ghost" className="relative h-10 w-10 rounded-full">
-                                <Avatar className="h-10 w-10">
-                                    <AvatarImage src={user.avatar} alt={user.name} />
-                                    <AvatarFallback>
-                                        {user.name
-                                            .split(" ")
-                                            .map((n: string) => n[0])
-                                            .join("")}
-                                    </AvatarFallback>
-                                </Avatar>
+                                <SafeAvatar
+                                    src={user.avatar}
+                                    name={user.name}
+                                    className="h-10 w-10"
+                                    size={40}
+                                />
                                 {user.isVerified && (
                                     <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 bg-green-500">
                                         <span className="sr-only">Verified</span>
@@ -139,15 +136,12 @@ export function Navigation() {
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button variant="ghost" size="sm" className="relative">
-                                    <Avatar className="h-8 w-8">
-                                        <AvatarImage src={user.avatar} alt={user.name} />
-                                        <AvatarFallback className="text-xs">
-                                            {user.name
-                                                .split(" ")
-                                                .map((n: string) => n[0])
-                                                .join("")}
-                                        </AvatarFallback>
-                                    </Avatar>
+                                    <SafeAvatar
+                                        src={user.avatar}
+                                        name={user.name}
+                                        className="h-8 w-8"
+                                        size={32}
+                                    />
                                     {user.isVerified && (
                                         <Badge className="absolute -top-1 -right-1 h-4 w-4 rounded-full p-0 bg-green-500">
                                             <span className="sr-only">Verified</span>

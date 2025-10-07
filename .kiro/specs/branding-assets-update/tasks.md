@@ -57,15 +57,18 @@
     - Verify screen reader compatibility
     - _Requirements: 3.1_
 
-- [ ] 6. Clean up remaining placeholder references
-  - [-] 6.1 Remove placeholder.svg references from mock data and components
+- [x] 6. Clean up remaining placeholder references
+  - [x] 6.1 Remove placeholder.svg references from mock data and components
     - Update mock user avatars to use proper placeholder or default avatars
     - Replace placeholder.svg references in listing images with proper defaults
     - Update transaction and chat mock data to use appropriate placeholders
     - _Requirements: 2.4, 4.3_
 
-  - [ ] 6.2 Update fallback image handling across the application
+  - [x] 6.2 Update fallback image handling across the application
     - Implement consistent fallback image strategy for user avatars
     - Add proper default images for listings without photos
     - Ensure all Image components have appropriate fallback handling
     - _Requirements: 2.4, 4.3_
+
+    - [-] 7. Update the existing project documents
+      - 7.1 Update README.md with new branding assets information
