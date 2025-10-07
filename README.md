@@ -1,67 +1,91 @@
-# CorpsMart PWA
+# CorpsMart
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+*Nigeria's most trusted marketplace exclusively for NYSC corps members*
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/jaxenjosephjj-5022s-projects/v0-corps-mart-pwa)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/RuxTnS0qGzG)
 
-## Overview
+## About CorpsMart
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+CorpsMart is Nigeria's premier marketplace designed exclusively for National Youth Service Corps (NYSC) members. Our platform connects verified corps members across all 36 states and FCT, creating a safe and trusted environment for buying, selling, and networking during your service year.
 
-## Deployment
+### What Makes CorpsMart Special
 
-Your project is live at:
+- **NYSC-Exclusive Community**: A marketplace designed specifically for verified corps members serving across Nigeria
+- **Verified Members Only**: Safe transactions with fellow corps members you can trust
+- **Nationwide Network**: Connect with corps members from Lagos to Maiduguri, Port Harcourt to Kano
+- **Service Year Focused**: Perfect for temporary needs during your one-year service
+- **Mobile-First Design**: Built for the Nigerian corps member lifestyle - fast, reliable, and data-friendly
 
-**[https://vercel.com/jaxenjosephjj-5022s-projects/v0-corps-mart-pwa](https://vercel.com/jaxenjosephjj-5022s-projects/v0-corps-mart-pwa)**
+## Live Application
 
-## Build your app
+Experience CorpsMart live at:
 
-Continue building your app on:
+**[https://corpsmart.vercel.app/](https://corpsmart.vercel.app/)**
 
-**[https://v0.app/chat/projects/RuxTnS0qGzG](https://v0.app/chat/projects/RuxTnS0qGzG)**
+## Features
 
-## Branding Assets
+- **Browse by State**: Find items and services from corps members in your state or nationwide
+- **Verified Sellers**: All users are verified NYSC members for your safety and peace of mind
+- **Corps-Friendly Categories**: From accommodation and transport to electronics and clothing
+- **Location-Based Search**: Find what you need close to your PPA or lodge
+- **Secure Messaging**: Chat safely with verified corps members before making deals
+- **Mobile Optimized**: Perfect for use on your smartphone with minimal data usage
 
-CorpsMart uses a consistent branding system across all touchpoints:
+## Brand Identity
 
-### Logo and Icons
+CorpsMart features a cohesive visual identity that reflects the NYSC community spirit:
 
-- **Primary Logo**: `public/market_square.svg` - The main CorpsMart logo used throughout the application
-- **Favicons**: Generated from the primary logo in multiple sizes:
-  - `public/favicon-16x16.png` - 16x16px favicon
-  - `public/favicon-32x32.png` - 32x32px favicon
-- **PWA Icons**: Optimized for Progressive Web App installation:
-  - `public/icon-192.png` - 192x192px PWA icon
-  - `public/icon-512.png` - 512x512px PWA icon
-- **Apple Touch Icon**: `public/apple-touch-icon.png` - 180x180px for iOS devices
+### Our Logo
 
-### Screenshots
+The CorpsMart logo embodies the marketplace concept with a clean, modern design that resonates with young Nigerian graduates. You'll see it consistently throughout the application, representing trust and community among corps members.
 
-- **PWA Screenshot**: `public/corpsmart.png` - Application screenshot used in PWA manifest for installation prompts
+### Visual Design
 
-### Logo Component
+- **Youth-Friendly Interface**: Modern, vibrant design that appeals to young graduates
+- **Nigerian Context**: Visual elements that feel familiar and trustworthy to Nigerian users
+- **Mobile-First Approach**: Optimized for the smartphones most corps members use daily
+- **Accessibility Focused**: Easy to use for all corps members, regardless of technical experience
 
-The application includes a reusable `Logo` component (`components/logo.tsx`) that:
-- Renders the SVG logo with responsive sizing
-- Supports multiple size variants (sm, md, lg)
-- Includes proper accessibility attributes
-- Handles navigation to the main listings page when clicked
-- Works seamlessly across light and dark themes
+### App Installation
 
-### Implementation Notes
+When you install CorpsMart on your device, you'll get:
+- A recognizable icon representing the NYSC community
+- Quick access without needing to remember website URLs
+- Offline capability for areas with poor network coverage
+- Fast loading even on slower internet connections
 
-All branding assets are optimized for web delivery and maintain consistent visual identity across:
-- Browser tabs (favicons)
-- PWA installation experience
-- Navigation components
-- Mobile and desktop interfaces
-- Light and dark theme modes
+## Getting Started
 
-## How It Works
+1. **Visit CorpsMart**: Access the platform on any device with internet
+2. **Verify Your Status**: Sign up with your NYSC details for account verification
+3. **Explore Listings**: Browse items and services from verified corps members
+4. **Install the App**: Add CorpsMart to your home screen for quick access
+5. **Start Trading**: Buy what you need or sell items you no longer use
+6. **Build Your Network**: Connect with corps members in your state and beyond
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Why Choose CorpsMart?
+
+### Safety First
+- **Verified Community**: Only NYSC members can join, ensuring you're dealing with fellow corps members
+- **Secure Platform**: Built with security features to protect your personal information
+- **Trusted Environment**: Report system to maintain community standards
+
+### Built for Corps Members
+- **Understand Your Needs**: Created by people who understand the NYSC experience
+- **Affordable Solutions**: Perfect for the corps member budget and lifestyle
+- **Temporary Arrangements**: Ideal for short-term needs during your service year
+- **State-Wide Coverage**: Whether you're in urban Lagos or rural communities
+
+### Technology That Works
+- **Data-Friendly**: Optimized to work well even on slow internet connections
+- **Mobile-First**: Designed primarily for smartphone users
+- **Offline Capable**: Browse saved content even when network is poor
+- **No Downloads Required**: Works directly in your browser, no app store needed
+
+## Community Impact
+
+CorpsMart strengthens the NYSC community by:
+- Helping corps members save money through peer-to-peer trading
+- Building connections that last beyond the service year
+- Supporting each other through shared resources and services
+- Creating a trusted network of young Nigerian graduates nationwide
